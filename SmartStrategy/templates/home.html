@@ -1,3 +1,5 @@
+
+
 <!-- write default html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +19,20 @@
     <!-- make 2 buttons for register and login -->
     <a href="{% url 'authentication:register' %}">Register</a>
     <a href="{% url 'authentication:login' %}">Login</a>
+    <!-- add button for a new page, called emergencies -->
+    <div>
+        <!-- print out every element of events json -->
+        {% for event in events %}
+            <h1> {{ event.name }} </h1>
+            <!-- get element in event.countries list -->
+            <h3> {{ event.countries.0.name }} - {{ event.countries.0.society_name }} </h3>
+            <p> {{ event.disaster_start_date }} </p>
+            <p> Number of people affected: {{ event.num_affected }} </p>
+            <p> Emergency response contact: {{ event.emergency_response_contact_email }}</p>
+            <p> Severity level: {{ event.ifrc_severity_level_display }}</p>
+            <button><a>Apply to volunteer</a></button>
+        {% endfor %}
+    </div>
 
 </body>
 
