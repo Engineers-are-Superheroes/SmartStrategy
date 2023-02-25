@@ -7,12 +7,9 @@ from .forms import VolunteerRegisterForm, VolunteerLoginForm
 # Create your views here.
 
 def login_view(request):
-    if request.method == 'GET':
-        #render login page and pass in the form as context
-        context = {
-            'form': VolunteerLoginForm()
-        }
-        return render(request, 'authentication/login.html', context)       
+    context = {
+        'form': VolunteerLoginForm()
+    }
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
@@ -21,21 +18,17 @@ def login_view(request):
             login(request, user)
             return redirect('strategy:home')
         else:
-            return render(request, 'authentication/login.html', {'error': 'Username or password is incorrect'})
-    return render(request, 'authentication/login.html')
+            context['error'] = 'Username or password is incorrect'
+    return render(request, 'authentication/login.html', context)       
 
 def logout_view(request):
     logout(request)
     return redirect('strategy:home')
 
 def register_view(request):
-    print(request.method)
-    print("welcome to rgister")
-    if request.method == 'GET':
-        context = {
-            'form': VolunteerRegisterForm()
-        }
-        return render(request, 'authentication/register.html', context)
+    context = {
+        'form': VolunteerRegisterForm()
+    }
     if request.method == 'POST':
        #register user
         form = VolunteerRegisterForm(request.POST)
@@ -55,5 +48,5 @@ def register_view(request):
             login(request, user)
             return redirect('strategy:home')
         else:
-            return render(request, 'authentication/register.html', {'error': 'Username or password is incorrect'})
-    return render(request, 'authentication/register.html')
+            context['error'] = 'form filled out incorrectly'
+    return render(request, 'authentication/register.html', context)

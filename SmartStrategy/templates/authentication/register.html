@@ -1,23 +1,127 @@
-<!-- write default html -->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Register</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<!-- write body with hello world paragraph -->
-<body>
-    <p>Hello World</p>
-    {% if form %}
-        <form action="{% url 'authentication:register' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-            <input type="submit" value="Submit">
-        </form>
-    {% else %}
-        <p>{{ error }}</p>
-    {% endif %}
-</body>
+<html lang="english">
+  <head>
+    <title>Sign-Up - exported project</title>
+    <meta property="og:title" content="Sign-Up - exported project" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
 
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./sign-up.css" rel="stylesheet" />
+
+      <div class="sign-up-container">
+        <nav class="navbar-navbar">
+          <a href="index.html" class="navbar-navlink">
+            <div class="navbar-frame5">
+              <img
+                alt="image41032"
+                src="/playground_assets/image41032-ng39-200w.png"
+                class="navbar-image4"
+              />
+              <img
+                alt="Line11032"
+                src="/playground_assets/line11032-r54d.svg"
+                class="navbar-line1"
+              />
+              <img
+                alt="image31032"
+                src="/playground_assets/image31032-x22b-200h.png"
+                class="navbar-image3"
+              />
+            </div>
+          </a>
+          <div class="navbar-menu">
+            <div class="navbar-menuitem">
+              <span class="navbar-text"><span>Emergencies</span></span>
+            </div>
+            <div class="navbar-menuitem1">
+              <span class="navbar-text2"><span>How it works</span></span>
+            </div>
+            <button class="navbar-button">
+              <img
+                alt="Rectangle171031"
+                src="/playground_assets/rectangle171031-rxgd-200h.png"
+                class="navbar-rectangle17"
+              />
+              <span class="navbar-text4"><a href="">Log in</a></span>
+            </button>
+          </div>
+        </nav>
+        <form action="{% url 'authentication:register' %}" method="post">
+            <div class="sign-up-frame14">
+                <div class="sign-up-frame141">
+            <span class="sign-up-text"><span>Create profile</span></span>
+            <div class="sign-up-frame142">
+                <span class="sign-up-text2">
+                    <span>Basic Information &amp; Location</span>
+                </span>
+                <div class="sign-up-frame143">
+                    <div class="input-container input-root-class-name3">
+                        {{ form.full_name }}
+                    </div>
+                    <div class="input-container input-root-class-name7">
+                    {{ form.email }}
+                </div>
+              </div>
+              <div class="sign-up-frame144">
+                  <div class="input-container input-root-class-name4">
+                      {{ form.country }}
+                </div>
+                <div class="input-container input-root-class-name5">
+                    {{ form.city }}
+                </div>
+              </div>
+              <span class="sign-up-text4"><span>Skills</span></span>
+              <div class="input-container input-root-class-name6">
+                    {{ form.skills }}
+              </div>
+            </div>
+            <a href="" class="sign-up-navlink">
+                <div class="small-button-container">
+                    <input  class="small-button-button" type="submit" value="Submit">
+                        <span class="small-button-text">Create profile</span>
+                    </input>
+                </div>
+            </a>
+        </div>
+        </div>
+        </form>
+</div>
+</div>
+  </body>
 </html>
