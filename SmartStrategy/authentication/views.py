@@ -32,21 +32,18 @@ def register_view(request):
     if request.method == 'POST':
        #register user
         form = VolunteerRegisterForm(request.POST)
-        if form.is_valid():
-            user = User.objects.create_user(
-                username=form.cleaned_data['email'],
-                email=form.cleaned_data['email'],
-                password=form.cleaned_data['password'],
-                first_name=form.cleaned_data['full_name'],
-            )
-            Volunteer.objects.create(
-                user=user,
-                country=form.cleaned_data['country'],
-                city=form.cleaned_data['city'],
-                phone_number=form.cleaned_data['phone_number'],
-            )
-            login(request, user)
-            return redirect('strategy:home')
-        else:
-            context['error'] = 'form filled out incorrectly'
+        user = User.objects.create_user(
+            username=form.data['email'],
+            email=form.data['email'],
+            password=form.data['password'],
+            first_name=form.data['full_name'],
+        )
+        Volunteer.objects.create(
+            user=user,
+            country=form.data['country'],
+            city=form.data['country'],
+            phone_number=form.data['country'],
+        )
+        login(request, user)
+        return redirect('strategy:home')
     return render(request, 'authentication/register.html', context)

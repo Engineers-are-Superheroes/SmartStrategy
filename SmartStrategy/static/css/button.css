@@ -1,0 +1,37 @@
+.button-container {
+  display: flex;
+  position: relative;
+}
+.button-button {
+  width: 236px;
+  height: 64px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: var(--dl-radius-radius-radius8);
+  text-decoration: none;
+  background-color: #e14747;
+}
+.button-text {
+  top: 20px;
+  left: 0px;
+  color: rgba(255, 255, 255, 1);
+  right: 0px;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  font-size: 20px;
+  align-self: center;
+  font-style: SemiBold;
+  text-align: center;
+  transition: 0.3s;
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+}
+.button-text:hover {
+  font-size: 22px;
+}

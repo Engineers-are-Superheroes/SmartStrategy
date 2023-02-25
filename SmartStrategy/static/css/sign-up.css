@@ -1,0 +1,331 @@
+.navbar-navbar {
+  width: 1420px;
+  height: 90px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(225, 71, 71, 1);
+  border-style: solid;
+  border-width: 2px;
+  margin-bottom: 63px;
+  justify-content: center;
+}
+.navbar-navlink {
+  display: contents;
+}
+.navbar-frame5 {
+  display: flex;
+  position: relative;
+  align-items: center;
+  border-color: transparent;
+  margin-right: 315px;
+  text-decoration: none;
+}
+.navbar-image4 {
+  width: 63px;
+  height: 68px;
+  position: relative;
+  box-sizing: content-box;
+  border-color: rgba(0, 0, 0, 1);
+  margin-right: 0px;
+  border-radius: 10px;
+}
+.navbar-line1 {
+  width: 47px;
+  height: 0px;
+  position: relative;
+  margin-right: 0px;
+}
+.navbar-image3 {
+  width: 200px;
+  height: 48px;
+  position: relative;
+  border-color: transparent;
+}
+.navbar-menu {
+  display: flex;
+  position: relative;
+  align-items: center;
+  border-color: transparent;
+}
+.navbar-menuitem {
+  width: 114px;
+  height: 20px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 70px;
+}
+.navbar-text {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.navbar-menuitem1 {
+  width: 114px;
+  height: 20px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 70px;
+}
+.navbar-text2 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.navbar-button {
+  width: 139.998291015625px;
+  height: 38px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+}
+.navbar-rectangle17 {
+  top: -2px;
+  left: -1px;
+  width: 139px;
+  height: 38px;
+  position: absolute;
+  box-sizing: content-box;
+  border-color: rgba(225, 71, 71, 1);
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 20px;
+}
+.navbar-text4 {
+  top: 9px;
+  left: 0px;
+  color: rgba(0, 0, 0, 1);
+  right: 0px;
+  width: 139px;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  font-size: 16px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+
+.navbar-root-class-name1 {
+  top: 0px;
+  left: 124px;
+  position: absolute;
+}
+
+.input-container {
+  width: auto;
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+}
+.input-input {
+  flex: 1;
+  width: auto;
+}
+.input-root-class-name {
+  margin-right: 30px;
+}
+.input-root-class-name1 {
+  margin-right: 30px;
+}
+.input-root-class-name2 {
+  margin-right: 30px;
+}
+.input-root-class-name3 {
+  width: 45%;
+  margin-right: 0px;
+}
+.input-root-class-name4 {
+  width: 45%;
+  margin-right: 30px;
+}
+.input-root-class-name5 {
+  width: 45%;
+  margin-right: 0px;
+}
+.input-root-class-name6 {
+  flex: 1;
+  width: 100%;
+}
+.input-root-class-name7 {
+  width: 45%;
+  align-self: flex-start;
+}
+
+.small-button-container {
+  display: flex;
+  position: relative;
+}
+.small-button-button {
+  width: 139.998291015625px;
+  height: 38px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: var(--dl-radius-radius-radius8);
+  background-color: #e14747;
+}
+.small-button-text {
+  color: rgb(255, 255, 255);
+  width: 139px;
+  height: auto;
+  font-size: 16px;
+  align-self: center;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+}
+
+.sign-up-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.sign-up-frame14 {
+  display: flex;
+  position: relative;
+  align-items: center;
+  border-color: transparent;
+  flex-direction: column;
+  justify-content: center;
+}
+.sign-up-frame141 {
+  display: flex;
+  position: relative;
+  align-items: center;
+  border-color: transparent;
+  flex-direction: column;
+}
+.sign-up-text {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 32px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 63px;
+  text-decoration: none;
+}
+.sign-up-frame142 {
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  border-color: transparent;
+  margin-bottom: 63px;
+  flex-direction: column;
+}
+.sign-up-text2 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 24px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0px;
+  text-decoration: none;
+}
+.sign-up-frame143 {
+  width: 100%;
+  display: flex;
+  padding: 20px 0;
+  position: relative;
+  flex-wrap: wrap;
+  align-items: stretch;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-bottom: 0px;
+  justify-content: space-between;
+}
+.sign-up-frame144 {
+  width: 615px;
+  display: flex;
+  padding: 20px 0;
+  position: relative;
+  align-self: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-bottom: 0px;
+  justify-content: space-between;
+}
+.sign-up-text4 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 24px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+.sign-up-navlink {
+  display: contents;
+}
+.sign-up-component6 {
+  text-decoration: none;
+}
+@media(max-width: 991px) {
+  .sign-up-frame144 {
+    width: 746px;
+  }
+}

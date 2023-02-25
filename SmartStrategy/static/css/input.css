@@ -1,0 +1,39 @@
+.input-container {
+  width: auto;
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+}
+.input-input {
+  flex: 1;
+  width: auto;
+}
+.input-root-class-name {
+  margin-right: 30px;
+}
+.input-root-class-name1 {
+  margin-right: 30px;
+}
+.input-root-class-name2 {
+  margin-right: 30px;
+}
+.input-root-class-name3 {
+  width: 45%;
+  margin-right: 0px;
+}
+.input-root-class-name4 {
+  width: 45%;
+  margin-right: 30px;
+}
+.input-root-class-name5 {
+  width: 45%;
+  margin-right: 0px;
+}
+.input-root-class-name6 {
+  flex: 1;
+  width: 100%;
+}
+.input-root-class-name7 {
+  width: 45%;
+  align-self: flex-start;
+}

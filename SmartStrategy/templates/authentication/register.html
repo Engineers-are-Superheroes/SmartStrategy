@@ -83,6 +83,7 @@
           </div>
         </nav>
         <form action="{% url 'authentication:register' %}" method="post">
+          {% csrf_token %}
             <div class="sign-up-frame14">
                 <div class="sign-up-frame141">
             <span class="sign-up-text"><span>Create profile</span></span>
@@ -92,19 +93,19 @@
                 </span>
                 <div class="sign-up-frame143">
                     <div class="input-container input-root-class-name3">
-                        {{ form.full_name }}
+                      {{ form.email }}
                     </div>
                     <div class="input-container input-root-class-name7">
-                    {{ form.email }}
+                      {{ form.full_name }}
                 </div>
               </div>
               <div class="sign-up-frame144">
                   <div class="input-container input-root-class-name4">
-                      {{ form.country }}
-                </div>
-                <div class="input-container input-root-class-name5">
-                    {{ form.city }}
-                </div>
+                    {{ form.password }}
+                  </div>
+                  <div class="input-container input-root-class-name5">
+                    {{ form.country }}
+                  </div>
               </div>
               <span class="sign-up-text4"><span>Skills</span></span>
               <div class="input-container input-root-class-name6">
@@ -113,9 +114,7 @@
             </div>
             <a href="" class="sign-up-navlink">
                 <div class="small-button-container">
-                    <input  class="small-button-button" type="submit" value="Submit">
-                        <span class="small-button-text">Create profile</span>
-                    </input>
+                    <input  class="small-button-button" type="submit" value="Create profile">
                 </div>
             </a>
         </div>

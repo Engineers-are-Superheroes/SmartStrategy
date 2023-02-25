@@ -1,0 +1,28 @@
+.small-button-container {
+  display: flex;
+  position: relative;
+}
+.small-button-button {
+  width: 139.998291015625px;
+  height: 38px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: var(--dl-radius-radius-radius8);
+  background-color: #e14747;
+}
+.small-button-text {
+  color: rgb(255, 255, 255);
+  width: 139px;
+  height: auto;
+  font-size: 16px;
+  align-self: center;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+}
