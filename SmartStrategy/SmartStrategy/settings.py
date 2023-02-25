@@ -15,8 +15,6 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-BACKEND_DIR = BASE_DIR  # rename variable for clarity
-FRONTEND_DIR = BASE_DIR.parent / 'frontend'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -25,8 +23,8 @@ FRONTEND_DIR = BASE_DIR.parent / 'frontend'
 SECRET_KEY = 'django-insecure-frzsl1&l!f#41hxk3)ql)kee%m9+-r^^pc4zj_nbej(a1sx&lg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DJANGO_ENV') == 'development'
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+DEBUG = True
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,7 +38,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'authentication',
-    'rest_framework',
+    'strategy',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +57,7 @@ ROOT_URLCONF = 'SmartStrategy.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [FRONTEND_DIR / 'build'],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,20 +118,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATICFILES_DIRS = [FRONTEND_DIR / 'build' / 'static']
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 STATICFILES_STORAGE = (
     'whitenoise.storage.CompressedManifestStaticFilesStorage')
 
-STATIC_ROOT = BACKEND_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATIC_URL = '/static/'  # already declared in the default settings
-
-WHITENOISE_ROOT = FRONTEND_DIR / 'build' / 'root'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-AUTH_USER_MODEL = 'authentication.Volunteer_User'

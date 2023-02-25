@@ -1,0 +1,19 @@
+<!-- write default html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<!-- write body with hello world paragraph -->
+<body>
+    <p>Hello World</p>
+    <form action="/authentication/login" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

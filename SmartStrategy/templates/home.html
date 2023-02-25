@@ -1,0 +1,23 @@
+<!-- write default html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<!-- write body with hello world paragraph -->
+<body>
+    <h1>This is home :D</h1>
+    {% if user.is_authenticated %}
+        <p>Logged in as {{ user.username }}</p>
+    {% else %}
+        <p>Not logged in</p>
+    {% endif %}
+    <!-- make 2 buttons for register and login -->
+    <a href="{% url 'authentication:register' %}">Register</a>
+    <a href="{% url 'authentication:login' %}">Login</a>
+
+</body>
+
+</html>
