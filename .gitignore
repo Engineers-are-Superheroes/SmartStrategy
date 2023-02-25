@@ -1,0 +1,8 @@
+# Virtual environments
+venv
+.venv
+env
+.env
+
+# Python trash files
+__pycache__
