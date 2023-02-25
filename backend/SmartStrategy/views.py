@@ -1,3 +1,4 @@
+import re
 import urllib.request
 
 from django.conf import settings
@@ -16,6 +17,9 @@ def iter_response(response, chunk_size=65536):
         response.close()
 
 def catchall_dev(request, upstream='http://localhost:3000'):
+    # pattern = re.compile("^(/static/)|^(/favicon.ico)$|^(/manifest.json)$|^(/logo192.png)$")
+    # if not pattern.match(request.path):
+    #     request.path = '/'
     upstream_url = upstream + request.path
     response = urllib.request.urlopen(upstream_url)
     content_type = response.getheader('Content-Type')
@@ -39,4 +43,4 @@ def catchall_dev(request, upstream='http://localhost:3000'):
 
 catchall_prod = TemplateView.as_view(template_name='index.html')
 
-catchall = catchall_dev if settings.DEBUG else catchall_prodsour
+catchall = catchall_dev if settings.DEBUG else catchall_prod
