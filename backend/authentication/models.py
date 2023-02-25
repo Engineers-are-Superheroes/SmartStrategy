@@ -2,7 +2,8 @@ from django.db import models
 
 # Create your models here.
 
-class Volunteer(AbstractBaseUser):
+class Volunteer(models.Model):
+
     email = models.EmailField(max_length=255, unique=True)
     full_name = models.CharField(max_length=255)
     country = models.CharField(max_length=255)
@@ -12,7 +13,7 @@ class Volunteer(AbstractBaseUser):
     USERNAME_FIELD = 'email'
 
 
-class Organisation_User(AbstractBaseUser):
+class Organisation_User(models.Model):
     username = models.CharField(max_length=255, unique=True)
     
     USERNAME_FIELD = 'username'
