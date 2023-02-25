@@ -16,11 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path, include
 
-from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('authentication/', include(('authentication.urls', 'authentication'), namespace = 'authentication', )),
+    path('authentication/', include(('authentication.urls', 'authentication'), namespace = 'authentication')),
     path('', include(('strategy.urls', 'strategy'), namespace = 'strategy')),
-    re_path(r'', views.catchall),
 ]

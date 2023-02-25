@@ -7,6 +7,7 @@ class Volunteer(models.Model):
     country = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
     phone_number = models.CharField(max_length=255)
+    skills = models.CharField(max_length=255, default="")
     #put keywords
 
 
