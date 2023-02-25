@@ -9,6 +9,7 @@ class VolunteerRegisterForm(forms.Form):
     country = forms.CharField()
     city = forms.CharField()
     phone_number = forms.CharField()
+    skills = forms.CharField()
 
 class VolunteerLoginForm(forms.Form):
     email = forms.EmailField()

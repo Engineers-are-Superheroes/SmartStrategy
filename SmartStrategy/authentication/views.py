@@ -16,7 +16,7 @@ def login_view(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
-        user = authenticate(request, email=email, password=password)
+        user = authenticate(request, username=email, password=password)
         if user is not None:
             login(request, user)
             return redirect('strategy:home')
@@ -29,6 +29,8 @@ def logout_view(request):
     return redirect('strategy:home')
 
 def register_view(request):
+    print(request.method)
+    print("welcome to rgister")
     if request.method == 'GET':
         context = {
             'form': VolunteerRegisterForm()
@@ -39,6 +41,7 @@ def register_view(request):
         form = VolunteerRegisterForm(request.POST)
         if form.is_valid():
             user = User.objects.create_user(
+                username=form.cleaned_data['email'],
                 email=form.cleaned_data['email'],
                 password=form.cleaned_data['password'],
                 first_name=form.cleaned_data['full_name'],

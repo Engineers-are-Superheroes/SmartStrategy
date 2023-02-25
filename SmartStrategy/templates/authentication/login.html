@@ -9,11 +9,15 @@
 <!-- write body with hello world paragraph -->
 <body>
     <p>Hello World</p>
-    <form action="/authentication/login" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Submit">
-    </form>
+    {% if form %}
+        <form action="{% url 'authentication:login' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit">
+        </form>
+    {% else %}
+        <p>{{ error }}</p>
+    {% endif %}
 </body>
 
 </html>
