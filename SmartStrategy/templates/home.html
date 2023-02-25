@@ -30,7 +30,12 @@
             <p> Number of people affected: {{ event.num_affected }} </p>
             <p> Emergency response contact: {{ event.emergency_response_contact_email }}</p>
             <p> Severity level: {{ event.ifrc_severity_level_display }}</p>
-            <button><a>Apply to volunteer</a></button>
+            <!-- REWRITE ACTION URL WHEN BACKEND IS READY -->
+            <form action="{% url 'authentication:login' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="event_id" value="{{ event.id }}">
+                <input type="submit" value="Emergency">
+            </form>
         {% endfor %}
     </div>
 
