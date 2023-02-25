@@ -1,4 +1,46 @@
+
+
+<!-- write default html -->
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<!-- write body with hello world paragraph -->
+<body>
+    <h1>This is home :D</h1>
+    {% if user.is_authenticated %}
+        <p>Logged in as {{ user.username }}</p>
+    {% else %}
+        <p>Not logged in</p>
+    {% endif %}
+    <!-- make 2 buttons for register and login -->
+    <a href="{% url 'authentication:register' %}">Register</a>
+    <a href="{% url 'authentication:login' %}">Login</a>
+    <!-- add button for a new page, called emergencies -->
+    <div>
+        <!-- print out every element of events json -->
+        {% for event in events %}
+            <h1> {{ event.name }} </h1>
+            <!-- get element in event.countries list -->
+            <h3> {{ event.countries.0.name }} - {{ event.countries.0.society_name }} </h3>
+            <p> {{ event.disaster_start_date }} </p>
+            <p> Number of people affected: {{ event.num_affected }} </p>
+            <p> Emergency response contact: {{ event.emergency_response_contact_email }}</p>
+            <p> Severity level: {{ event.ifrc_severity_level_display }}</p>
+            <!-- REWRITE ACTION URL WHEN BACKEND IS READY -->
+            <form action="{% url 'authentication:login' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="event_id" value="{{ event.id }}">
+                <input type="submit" value="Emergency">
+            </form>
+        {% endfor %}
+    </div>
+
+</body>
+
 <html lang="english">
 {% load static %}
     <head>
