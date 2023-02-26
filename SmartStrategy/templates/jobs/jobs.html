@@ -195,11 +195,17 @@
                                     <p> Severity level: {{ event.ifrc_severity_level_display }}</p>
                                 </span>
                                 <div class="jobs-container2">
-                                    <button class="jobs-button">
+                                    <button class="jobs-button" style="padding: 0.5em 1.5em;">
+                                        <a
+                                            href="{% url 'strategy:job_task' event_name=event.dtype.name %}"
+                                            class="button-button"
+                                        >
+
                                         <span class="jobs-text4">
-                                            <span>Select job</span>
+                                            <span>View tasks</span>
                                             <br />
                                         </span>
+                                        </a>
                                     </button>
                                 </div>
                             </div>

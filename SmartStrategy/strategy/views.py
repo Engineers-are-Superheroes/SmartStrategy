@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from .processing_jobs.backend import backend
 import requests
 
 #create home view 
@@ -23,6 +24,16 @@ def job_list_view(request):
 
     
 
-def job_task_view(request):
+def job_task_view(request, event_name):
     user = request.user
+    if not user.is_authenticated:
+        return redirect('authentication:register')
     #generate job details based on keywords
+    tasks = [
+        {'title': task[0], 'description': task[1]} for task in backend(3691, event_name) if len(task) > 1
+    ]
+    context = {
+        'tasks': tasks,
+    }
+
+    return render(request, 'jobs/tasks.html', context)
