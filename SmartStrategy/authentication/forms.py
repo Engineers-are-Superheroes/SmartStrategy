@@ -14,5 +14,5 @@ class VolunteerRegisterForm(forms.Form):
     skills = forms.CharField( widget=forms.TextInput(attrs={ "class" : "input-input input", "placeholder" : "Skills"}))
 
 class VolunteerLoginForm(forms.Form):
-    email = forms.EmailField( widget=forms.EmailInput(attrs=form_attr))
-    password = forms.CharField(widget=forms.PasswordInput(attrs=form_attr))
+    email = forms.EmailField( widget=forms.EmailInput(attrs={"class" : "input-input input", "placeholder" : "Email"}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={"class" : "input-input input", "placeholder" : "Password"}))

@@ -2,7 +2,7 @@
 <html lang="english">
 {% load static %}
     <head>
-        <title>Jobs - exported project</title>
+        <title>Jobs</title>
         <meta property="og:title" content="Jobs - exported project" />
         <meta
             name="viewport"
@@ -10,6 +10,7 @@
         />
         <meta charset="utf-8" />
         <meta property="twitter:card" content="summary_large_image" />
+        <link rel="icon" href="{% static 'media/favicon.png' %}" />
 
         <style data-tag="reset-style-sheet">
             html {
@@ -128,21 +129,21 @@
 
             <div class="jobs-container">
                 <nav class="navbar-navbar navbar-root-class-name1">
-                    <a href="index.html" class="navbar-navlink">
+                    <a href="{% url 'strategy:home' %}" class="navbar-navlink">
                         <div class="navbar-frame5">
                             <img
                                 alt="image41032"
-                                src="/playground_assets/image41032-ng39-200w.png"
+                                src="{% static 'media/image41032-ng39-200w.png' %}"
                                 class="navbar-image4"
                             />
                             <img
                                 alt="Line11032"
-                                src="/playground_assets/line11032-r54d.svg"
+                                src="{% static 'media/line11032-r54d.svg' %}"
                                 class="navbar-line1"
                             />
                             <img
                                 alt="image31032"
-                                src="/playground_assets/image31032-x22b-200h.png"
+                                src="{% static 'media/image31032-x22b-200h.png' %}"
                                 class="navbar-image3"
                             />
                         </div>
@@ -161,48 +162,52 @@
                         <button class="navbar-button">
                             <img
                                 alt="Rectangle171031"
-                                src="/playground_assets/rectangle171031-rxgd-200h.png"
+                                src="{% static 'media/rectangle171031-rxgd-200h.png' %}"
                                 class="navbar-rectangle17"
                             />
-                            <span class="navbar-text4"
-                                ><span>Log in</span></span
-                            >
+                            <span class="navbar-text4">
+                                <a
+                                    href="{% url 'authentication:logout' %}"
+                                    >Log out</a>
+                                </span>
                         </button>
                     </div>
                 </nav>
-                <div class="jobs-container1">
-                    <div class="jobs-frame2">
-                        <img
-                            src="public/playground_assets/rectangle121810-c1qc-300h.png"
-                            alt="Rectangle121810"
-                            class="jobs-rectangle12"
-                        />
-                        <div class="jobs-frame14">
-                            <span class="jobs-text"
-                                ><span>Job outline #1</span></span
-                            >
-                            <span class="jobs-text2">
-                                <span>
-                                    Lorem ipsum dolor sit amet,
-                                    consectetur adipiscing elit.
-                                    Integer lacinia sapien eget arcu
-                                    maximus euismod. Aliquam at
-                                    lobortis urna. Vivamus ut ornare
-                                    mi.
+
+                <div style="position: absolute; top: 15vh;">
+                    <!-- print out every element of events json -->
+                    {% for event in events %}
+                    <div class="jobs-container1">
+                        <div class="jobs-frame2">
+                            <img
+                                src="{% static 'media/rectangle121810-c1qc-300h.png' %}"
+                                alt="Rectangle121810"
+                                class="jobs-rectangle12"
+                            />
+                            <div class="jobs-frame14">
+                                <span class="jobs-text"
+                                    ><span>{{ event.name }} </span></span>
+                                    <span> {{ event.countries.0.name }} - {{ event.countries.0.society_name }} </span>
+                                <span class="jobs-text2">
+                                    <p> {{ event.disaster_start_date }} </p>
+                                    <p> Number of people affected: {{ event.num_affected }} </p>
+                                    <p> Emergency response contact: {{ event.emergency_response_contact_email }}</p>
+                                    <p> Severity level: {{ event.ifrc_severity_level_display }}</p>
                                 </span>
-                            </span>
-                            <div class="jobs-container2">
-                                <button class="jobs-button">
-                                    <span class="jobs-text4">
-                                        <span>Select job</span>
-                                        <br />
-                                    </span>
-                                </button>
+                                <div class="jobs-container2">
+                                    <button class="jobs-button">
+                                        <span class="jobs-text4">
+                                            <span>Select job</span>
+                                            <br />
+                                        </span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <br />
+                    {% endfor %}
                 </div>
-            </div>
         </div>
     </body>
 </html>

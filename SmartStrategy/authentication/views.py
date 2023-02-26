@@ -7,6 +7,8 @@ from .forms import VolunteerRegisterForm, VolunteerLoginForm
 # Create your views here.
 
 def login_view(request):
+    if request.user.is_authenticated:
+        return redirect('strategy:home')
     context = {
         'form': VolunteerLoginForm()
     }
@@ -26,6 +28,9 @@ def logout_view(request):
     return redirect('strategy:home')
 
 def register_view(request):
+    if request.user.is_authenticated:
+        return redirect('strategy:home')
+    
     context = {
         'form': VolunteerRegisterForm()
     }
