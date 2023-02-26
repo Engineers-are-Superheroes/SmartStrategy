@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-frzsl1&l!f#41hxk3)ql)kee%m9+-r^^pc4zj_nbej(a1sx&lg
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['smartvolunteers.azurewebsites.net', '127.0.0.1']
 
 
 # Application definition
@@ -48,6 +48,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'SmartStrategy.urls'
@@ -119,9 +121,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_URL = 'static/'
 
-STATIC_URL = '/static/'  # already declared in the default settings
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
