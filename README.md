@@ -10,15 +10,7 @@ Activate virtual enviroment <code>source venv/Scripts/activate</code>
 Create a virtual environment <code>python3 -m venv venv</code>  
 Activate virtual enviroment <code>source venv/bin/activate</code>
 
-Run <code>pip install -r requirements.txt</code> (pip3 for Mac)  
-Run <code>cd frontend; npm install</code>  
+Run <code>pip install -r requirements.txt</code> (pip3 for Mac)
 
-Make migrations: <code> cd ../backend; python manage.py migrate </code>
-Navigate back to the root directory <code> cd .. </code> 
-
-### Development
-Run <code>source dev.sh</code>  
-
-### Production
-Run <code>source build.sh</code>  
-Run <code>source prod.sh</code>
+### Run app
+Run `python manage.py runserver`
