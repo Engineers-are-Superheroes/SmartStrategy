@@ -8,7 +8,7 @@
     border-color: rgba(225, 71, 71, 1);
     border-style: solid;
     border-bottom-width: 2px;
-    margin-bottom: 63px;
+    margin-bottom: px;
     justify-content: center;
 }
 .navbar-navlink {
@@ -146,109 +146,95 @@
 
 .navbar-root-class-name1 {
     top: 0px;
+    left: 124px;
     position: absolute;
 }
 
-.jobs-container {
-    width: 100%;
-    display: flex;
-    overflow: auto;
-    min-height: 100vh;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-.jobs-container1 {
-    flex: 0 0 auto;
-    width: 200px;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-}
-.jobs-frame2 {
-    width: 1010px;
-    height: auto;
-    display: flex;
-    padding: 89px 62px;
-    position: relative;
-    align-self: center;
-    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.20000000298023224);
-    align-items: flex-start;
-    border-color: transparent;
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 1);
-}
-.jobs-rectangle12 {
-    width: 254px;
-    height: 254px;
-    position: relative;
-    border-color: transparent;
-    margin-right: 68px;
-    border-radius: 15px;
-}
-.jobs-frame14 {
-    display: flex;
-    position: relative;
-    align-items: flex-start;
-    border-color: transparent;
-    flex-direction: column;
-}
-.jobs-text {
-    color: rgba(0, 0, 0, 1);
-    height: auto;
-    font-size: 32px;
-    align-self: auto;
-    font-style: Regular;
-    text-align: left;
-    font-family: Inter;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    margin-right: 0;
-    margin-bottom: 46px;
-    text-decoration: none;
-}
-.jobs-text2 {
-    color: rgba(0, 0, 0, 1);
-    width: 100%;
-    height: auto;
-    font-size: 20px;
-    align-self: auto;
-    font-style: Regular;
-    text-align: left;
-    font-family: Inter;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    margin-right: 0;
-    margin-bottom: 46px;
-    text-decoration: none;
-}
-.jobs-container2 {
+.button-container {
     display: flex;
     position: relative;
 }
-.jobs-button {
-    width: 139.998291015625px;
-    height: 38px;
+.button-button {
+    width: 236px;
+    height: 64px;
     display: flex;
     position: relative;
     align-items: flex-start;
     flex-shrink: 0;
     border-color: transparent;
     border-radius: var(--dl-radius-radius-radius8);
+    text-decoration: none;
     background-color: #e14747;
 }
-.jobs-text4 {
-    color: rgb(255, 255, 255);
-    width: 139px;
+.button-text {
+    top: 20px;
+    left: 0px;
+    color: rgba(255, 255, 255, 1);
+    right: 0px;
     height: auto;
-    font-size: 16px;
+    margin: auto;
+    position: absolute;
+    font-size: 20px;
     align-self: center;
     font-style: SemiBold;
     text-align: center;
+    transition: 0.3s;
     font-family: Montserrat;
     font-weight: 600;
     line-height: normal;
     font-stretch: normal;
+}
+.button-text:hover {
+    font-size: 22px;
+}
+
+.home-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+}
+.home-frame14 {
+    width: 954px;
+    display: flex;
+    position: relative;
+    margin-top: 10%;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    flex-direction: column;
+    justify-content: center;
+}
+.home-text {
+    color: rgb(0, 0, 0);
+    width: 1000px;
+    height: auto;
+    font-size: 96px;
+    align-self: auto;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+.home-text1 {
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    font-size: 24px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 30px;
+    text-decoration: none;
 }

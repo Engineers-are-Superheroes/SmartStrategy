@@ -7,6 +7,9 @@ def home_view(request):
 
     return render(request, 'home.html')
 
+def info_view(request):
+    return render(request, 'jobs/info.html')
+
 def job_list_view(request):
     user = request.user
     if not user.is_authenticated:
@@ -22,7 +25,7 @@ def job_list_view(request):
     } 
     return render(request, 'jobs/jobs.html', context)
 
-    
+
 
 def job_task_view(request, event_name):
     user = request.user
