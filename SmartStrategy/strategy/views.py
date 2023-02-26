@@ -46,6 +46,17 @@ def job_task_view(request, event_name):
     tasks = [
         {'title': task[0], 'description': task[1]} for task in backend(3691, event_name) if len(task) > 1
     ]
+    for task in tasks:
+        if 'Shelter' in task['title']:
+            task['image'] = 'media/shelter.png'
+        elif 'Medical' in task['title']:
+            task['image'] = 'media/medical.png'
+        elif 'Livelihood' in task['title']:
+            task['image'] = 'media/livelihood.png'
+        elif 'Clothing' in task['title']:
+            task['image'] = 'media/clothing.png'
+        else:
+            task['image'] = 'media/rectangle121810-c1qc-300h.png'
     context = {
         'event_name': event_name,
         'tasks': tasks,
