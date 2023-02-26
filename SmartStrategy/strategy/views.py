@@ -19,6 +19,17 @@ def job_list_view(request):
     response = requests.get(url)
     response = response.json()
     events = response['results']
+    for event in events:
+        if 'Earthquake' in event['name']:
+            event['image'] = 'media/earthquake.png'
+        elif 'HUNGER' in event['name']:
+            event['image'] = 'media/famine.png'
+        elif 'COVID' in event['name'] or 'Cholera' in event['name']:
+            event['image'] = 'media/covid.png'
+        elif 'Ukraine' in event['name']:
+            event['image'] = 'media/war.png'
+        else:
+            event['image'] = 'media/rectangle121810-c1qc-300h.png'
 
     context = {
         'events': events,
