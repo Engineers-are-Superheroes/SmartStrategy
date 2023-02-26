@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="english">
-    {% load static %}
+{% load static %}
     <head>
-        <title>Jobs</title>
-        <meta property="og:title" content="Jobs - exported project" />
+        <title>Home</title>
+        <meta property="og:title" content="exported project" />
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
@@ -123,16 +122,13 @@
     <body>
         <div>
             <link
-                href="{% static 'css/jobs.css' %}"
+                href="{% static 'css/home.css' %}"
                 rel="stylesheet"
             />
 
-            <div class="jobs-container">
-                <nav class="navbar-navbar navbar-root-class-name1">
-                    <a
-                        href="{% url 'strategy:home' %}"
-                        class="navbar-navlink"
-                    >
+            <div class="home-container">
+                <nav class="navbar-navbar navbar-root-class-name">
+                    <a href="{% url 'strategy:home' %}" class="navbar-navlink">
                         <div class="navbar-frame5">
                             <img
                                 alt="image41032"
@@ -169,50 +165,41 @@
                                 class="navbar-rectangle17"
                             />
                             <span class="navbar-text4">
+                                {% if user.is_authenticated %}
                                 <a
                                     href="{% url 'authentication:logout' %}"
                                     >Log out</a
                                 >
+                                {% else %}
+                                <a
+                                    href="{% url 'authentication:login' %}"
+                                    >Log in</a
+                                >
+                                {% endif %}
                             </span>
                         </button>
                     </div>
                 </nav>
-
-                <div style="position: absolute; top: 15vh">
-                    <!-- print out every task title and description -->
-                    {% for task in tasks %}
-                    <div class="jobs-container1">
-                        <div class="jobs-frame2">
-                            <img
-                                src="{% static 'media/rectangle121810-c1qc-300h.png' %}"
-                                alt="Rectangle121810"
-                                class="jobs-rectangle12"
-                            />
-                            <div class="jobs-frame14">
-                                <span class="jobs-text"
-                                    ><span>{{ task.title }} </span></span>
-                                <span class="jobs-text2">
-                                    <p> {{ task.description }} </p>
-                                </span>
-                                <div class="jobs-container2">
-                                    <button class="jobs-button" style="padding: 0.5em;">
-                                        <a
-                                            href="{% url 'strategy:signedup' event_name=event_name task_name=task.title %}"
-                                            class="button-button"
-                                        >
-
-                                        <span class="jobs-text4">
-                                            <span>Take this task</span>
-                                            <br />
-                                        </span>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                <div class="home-frame14">
+                    <span class="home-text"
+                        >Thank you for your support {{ user.first_name }}</span
+                    >
+                    <span class="home-text1">
+                        <span>
+                            You've signed up to help for {{ event_name }}, we will email you shortly with more details about {{ task_name }}.
+                        </span>
+                    </span>
+                    <div class="button-container">
+                        <a
+                            href="{% url 'strategy:home'%}"
+                            class="button-button"
+                        >
+                            <span class="button-text"
+                                ><span>Go Home</span></span
+                            >
+                        </a>
                     </div>
-                    <br />
-                    {% endfor %}
+                </div>
             </div>
         </div>
     </body>

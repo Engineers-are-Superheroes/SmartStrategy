@@ -33,7 +33,19 @@ def job_task_view(request, event_name):
         {'title': task[0], 'description': task[1]} for task in backend(3691, event_name) if len(task) > 1
     ]
     context = {
+        'event_name': event_name,
         'tasks': tasks,
     }
 
     return render(request, 'jobs/tasks.html', context)
+
+
+def signedup_view(request, event_name, task_name):
+    user = request.user
+    if not user.is_authenticated:
+        return redirect('authentication:register')
+    context = {
+        'event_name': event_name,
+        'task_name': task_name,
+    }
+    return render(request, 'jobs/signedup.html', context)
